@@ -1,0 +1,6 @@
+name: RefluxSurvivalScoreboard
+version: 1.0.0
+main: net.refluxmc.refluxsurvivalscoreboard.RefluxSurvivalScoreboard
+api-version: 1.21.1
+
+depend: [PlaceholderAPI]
