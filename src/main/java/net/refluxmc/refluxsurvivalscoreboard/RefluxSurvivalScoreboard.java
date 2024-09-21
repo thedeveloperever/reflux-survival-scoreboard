@@ -82,11 +82,12 @@ public final class RefluxSurvivalScoreboard extends JavaPlugin implements Listen
     private void updateBoard(FastBoard board) {
         Player player = board.getPlayer();
         String rankPlaceholder = PlaceholderAPI.setPlaceholders(player, "%luckperms_primary_group_name%");
-        
+        String playerCount = PlaceholderAPI.setPlaceholders(player, "%server_online%");
+
         board.updateLines(
-                "                    ",
+                ChatColor.GRAY + ChatColor.STRIKETHROUGH.toString() + "--------------------",
                 ChatColor.AQUA + "Players: ",
-                ChatColor.WHITE + String.valueOf(getServer().getOnlinePlayers().size()),
+                ChatColor.WHITE + playerCount,
                 "",
                 ChatColor.AQUA + "TPS: ",
                 ChatColor.WHITE + getCurrentTPS(),
@@ -94,9 +95,10 @@ public final class RefluxSurvivalScoreboard extends JavaPlugin implements Listen
                 ChatColor.AQUA + "Rank: ",
                 ChatColor.WHITE + rankPlaceholder,
                 "",
-                ChatColor.GRAY + "refluxmc.net"
+                ChatColor.AQUA + "refluxmc.net",
+                ChatColor.GRAY + ChatColor.STRIKETHROUGH.toString() + "--------------------"
         );
-    }
+}
 
     @Override
     public void onDisable() {
